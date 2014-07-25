@@ -1,3 +1,16 @@
+*   Deprecate `DatabaseTasks.load_schema` to act on the current connection.
+    Use `.load_schema_current` instead. In the future `load_schema` will
+    require the `configuration` to act on as an argument.
+
+    *Yves Senn*
+
+*   Fixed automatic maintaining test schema to properly handle sql structure
+    schema format.
+
+    Fixes #15394.
+
+    *Wojciech Wnętrzak*
+
 *   `db:purge` with MySQL respects `Rails.env`.
 
     *Yves Senn*
@@ -269,14 +282,7 @@
 
     Fixes #8328.
 
-    Sean Griffin
-
-*   Fixed automatic maintaining test schema to properly handle sql structure
-    schema format.
-
-    Fixes #15394.
-
-    *Wojciech Wnętrzak*
+    *Sean Griffin*
 
 *   Pluck now works when selecting columns from different tables with the same
     name.
